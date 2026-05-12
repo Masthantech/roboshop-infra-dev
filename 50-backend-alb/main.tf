@@ -22,7 +22,7 @@ module "backend_alb" {
 
 resource "aws_route53_record" "backend-alb" {
   zone_id = var.zone_id
-  name    = "*.backend-dev.${var.name}"
+  name    = "*.backend-${var.environment}.${var.name}"
   type    = "A"
 
   alias {

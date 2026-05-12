@@ -18,7 +18,7 @@ resource "aws_instance" "vpn" {
 
 resource "aws_route53_record" "vpn-dev" {
   zone_id = var.zone_id
-  name    = "vpn-dev.${var.zone_name}"
+  name    = "vpn-${var.environment}.${var.zone_name}"
   type    = "A"
   ttl     = 1
   records = [aws_instance.vpn.public_ip]
