@@ -22,5 +22,9 @@ resource "aws_route53_record" "vpn-dev" {
   type    = "A"
   ttl     = 1
   records = [aws_instance.vpn.public_ip]
+  allow_overwrite = true
 }
+
+
+
 
